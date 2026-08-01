@@ -1,6 +1,7 @@
 // Part 1
 
 #include <iostream>
+#include <string>
 using namespace std;
 
 // int main(){
@@ -123,32 +124,173 @@ using namespace std;
 //     return 0;
 // }
 
-struct student{
-   string Name;
-   int Roll_No;
-   string Degree;
-   string Hostel;
-   float CurrentCGPA;
+// Part 4
 
-};
+// struct Student
+// {
+//     string Name, Degree, Hostel;
+//     int Roll_No;
+//     float CurrentCGPA;
 
-int main(){
+//     void addDetails()
+//     {
+//         cout << "Enter Name: ";
+//         getline(cin, Name);
 
-    struct student s;
+//         cout << "Enter Roll No: ";
+//         cin >> Roll_No;
+//         cin.ignore();
 
-    cout<<"Enter name:"<<endl;
-    cin>>s.Name;
+//         cout << "Enter Degree: ";
+//         getline(cin, Degree);
 
-    cout<<"Enter Roll No:"<<endl;
-    cin>>s.Roll_No;
+//         cout << "Enter Hostel: ";
+//         getline(cin, Hostel);
 
-    cout<<"Enter Degree:"<<endl;
-    cin>>s.Degree;
+//         cout << "Enter Current CGPA: ";
+//         cin >> CurrentCGPA;
+//         cin.ignore();
+//     }
 
-    cout<<"Enter Hostel:"<<endl;
-    cin>>s.Hostel;
+//     void updateCGPA()
+//     {
+//         cout << "Enter New CGPA: ";
+//         cin >> CurrentCGPA;
+//         cin.ignore();
+//     }
 
-    cout<<"Enter current CGPA:"<<endl;
-    cin>>s.CurrentCGPA;
+//     void updateHostel()
+//     {
+//         cout << "Enter New Hostel: ";
+//         getline(cin, Hostel);
+//     }
 
-}
+//     void displayDetails()
+//     {
+//         cout << "Student Details\n";
+//         cout << "Name: " << Name << endl;
+//         cout << "Roll No: " << Roll_No << endl;
+//         cout << "Degree: " << Degree << endl;
+//         cout << "Hostel: " << Hostel << endl;
+//         cout << "Current CGPA: " << CurrentCGPA << endl;
+//     }
+// };
+
+// int main()
+// {
+//     Student s;
+
+//     s.addDetails();
+//     s.displayDetails();
+
+//     s.updateCGPA();
+//     s.updateHostel();
+
+//     cout << "\nAfter Updating:\n";
+//     s.displayDetails();
+
+//     return 0;
+// }
+
+// Part 5
+
+// class Student{
+//     private:
+//         string Name;
+//         int Roll_No;
+//         string Degree;
+//         string Hostel;
+//         float CurrentCGPA;
+
+//     void displayDetails(){
+//         cout << "Student Details:";
+//         cout << "Name: " << Name << endl;
+//         cout << "Roll No: " << Roll_No << endl;
+//         cout << "Degree: " << Degree << endl;
+//         cout << "Hostel: " << Hostel << endl;
+//         cout << "Current CGPA: " << CurrentCGPA << endl;
+//     }
+
+//     public:
+//         void addDetails()
+//         {
+//         cout << "Enter Name: ";
+//         getline(cin, Name);
+
+//         cout << "Enter Roll No: ";
+//         cin >> Roll_No;
+//         cin.ignore();
+
+//         cout << "Enter Degree: ";
+//         getline(cin, Degree);
+
+//         cout << "Enter Hostel: ";
+//         getline(cin, Hostel);
+
+//         cout << "Enter Current CGPA: ";
+//         cin >> CurrentCGPA;
+//         cin.ignore();
+//                          }
+
+//      void updateCGPA()
+//     {
+//         cout << "Enter New CGPA: ";
+//         cin >> CurrentCGPA;
+//         cin.ignore();
+//     }
+
+//     void updateHostel()
+//     {
+//         cout << "Enter New Hostel: ";
+//         getline(cin, Hostel);
+//     }
+
+//     void showDetails()   
+//     {
+//         displayDetails();
+//     }
+
+
+// };
+
+// int main()
+// {
+//     Student s;
+
+//     s.addDetails();
+//     s.showDetails();
+
+//     s.updateCGPA();
+//     s.updateHostel();
+
+//     cout << "After Updating:\n";
+//     s.showDetails();
+
+//     return 0;
+// }
+
+// Part 6
+
+// class t1{
+//     private:
+//         void Hello(){
+//             cout<<"Hello World";
+//         }
+
+//     public:
+//         void show(){
+//             Hello();
+//         }
+// };
+
+// int main(){
+
+//     t1 t;
+
+//     t.show();
+
+//     // t.Hello();
+
+//     return 0;
+// }
+
