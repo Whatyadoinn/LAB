@@ -1,110 +1,139 @@
 #include <iostream>
-#include <vector>
 using namespace std;
 
-vector <int> arr = { 10, 20, 30, 40 };
-vector <int> b;
-int n;
+int arr[100];
+int n = 0;
 
-void Create(){
-    
+void Create() {
     cout << "Enter the number of elements in array: ";
     cin >> n;
     cout << "Enter the elements in the array:\n";
-    for(int i = 0; i < n && i < 100; ++i){
-        cin >> b[i];
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
     }
 }
 
-void Display(){
-    if (n == 0)
-    {
-        cout << "No elements in the array";
+void Display() {
+    if (n == 0) {
+        cout << "No elements in the array\n";
+        return;
     }
-    cout<<"Elements in array:";
-    for(int i = 0;i<n;i++){
-        cout<< arr[i]<< ""<< endl;
+    cout << "Elements in array: ";
+    for (int i = 0; i < n; i++) {
+        cout << arr[i] << " ";
     }
-    
+    cout << endl;
 }
 
-void Insert(){
-
-    int pos,element;
-
-    if (n >= 100)
-    {
-        cout << "Array is full,Cannot insert more elements";
+void Insert() {
+    if (n >= 100) {
+        cout << "Array is full, cannot insert more elements\n";
+        return;
     }
 
-    cout<< "Enter the element you want to insert:";
+    int pos, element;
+    cout << "Enter the element you want to insert: ";
     cin >> element;
-    cout<< "Enter the position you want to insert:";
+    cout << "Enter the position you want to insert (0 to " << n << "): ";
     cin >> pos;
 
-    for(int i=pos; i<=arr.size();i++){
-        arr[i]=arr[i+1];
-        arr[pos] = element;
+    if (pos < 0 || pos > n) {
+        cout << "Invalid position\n";
+        return;
     }
 
+    for (int i = n; i > pos; i--) {
+        arr[i] = arr[i - 1];
+    }
+
+    arr[pos] = element;
+    n++;
+    cout << "Inserted Successfully\n";
 }
 
-void Delete(){
-    cout << "Array before deletion\n";
-    for (int i = 0; i < arr.size(); i++)
-        cout << arr[i] << " ";
+void Delete() {
+    if (n == 0) {
+        cout << "Array is empty \n";
+        return;
+    }
 
-    arr.erase(arr.begin());
+    cout << "Array before deletion\n";
+    for (int i = 0; i < n; i++)
+        cout << arr[i] << " ";
+    cout << endl;
+
+    int pos;
+    cout << "Enter the position to delete (0 to " << n - 1 << "): ";
+    cin >> pos;
+
+    if (pos < 0 || pos >= n) {
+        cout << "Invalid position\n";
+        return;
+    }
+
+    for (int i = pos; i < n - 1; i++) {
+        arr[i] = arr[i + 1];
+    }
+
+    n--;
 
     cout << "Array after deletion\n";
-    for (int i = 0; i < arr.size(); i++)
+    for (int i = 0; i < n; i++)
         cout << arr[i] << " ";
-
+    cout << endl;
 }
 
-int main(){
+void linearSearch() {
+    int key;
+    cout << "Enter the Element you are looking for: ";
+    cin >> key;
 
-    int option;
-    
-    cout << "Enter the program you want to continue with:\n 1. CREATE \n 2. DISPLAY \n 3. INSERT \n 4. DELETE \n 5. LINEAR SEARCH \n 6. EXIT";
-    cin >> option;
-
-    switch (option)
-    {
-    case 1:
-       
-        Create();
-
-        break;
-    
-    case 2:
-       
-        Display();
-
-        break;
-
-    case 3:
-       
-        Insert();
-
-        break;
-
-    case 4:
-       
-        break;
-
-    case 5:
-       
-        break;
-
-    case 6:
-        cout << "Exit";
-        break;
-
-
-    default:
-        cout << "You entered an invalid option";
-        break;
+    bool found = false;
+    for (int i = 0; i < n; i++) {
+        if (arr[i] == key) {
+            cout << "Element found at index " << i << endl;
+            found = true;
+            break;
+        }
     }
 
+    if (!found) {
+        cout << "Element not found." << endl;
+    }
+}
+
+int main() {
+    int option;
+
+    do {
+        cout << "\nEnter the program you want to continue with:\n"
+             << " 1. CREATE\n 2. DISPLAY\n 3. INSERT\n 4. DELETE\n 5. LINEAR SEARCH\n 6. EXIT\n";
+        cin >> option;
+
+        switch (option) {
+            case 1:
+                Create();
+                break;
+            case 2:
+                Display();
+                break;
+            case 3:
+                Insert();
+                break;
+            case 4:
+                Delete();
+                break;
+            case 5:
+                linearSearch();
+                break;
+            case 6:
+                cout << "Exit\n";
+                break;
+            default:
+                cout << "You entered an invalid option\n";
+                break;
+        }
+    } while (option != 6);
+
+    return 0;
 }
