@@ -207,24 +207,219 @@
 // }
 
 
+// #include <iostream>
+// using namespace std;
+
+// int main(){
+
+//     int arr[20]={100,200,2,4,56,78,43,56,33,24,44};
+//     int max = 0;
+
+//     for (int i = 0; i <20; i++)
+//     {
+//         /* code */
+//         if(arr[max]<arr[i]){
+//             max = i;
+//        }
+//     }
+    
+//     cout<<"Index of Max:"<<max<<endl;
+//     cout<<"Max value:"<<arr[max];
+
+// }
+
+// Q1 ASS -2
+
 #include <iostream>
 using namespace std;
 
-int main(){
+// class Point {
+//     public:
+//      int x,y;
+// };
 
-    int arr[20]={100,200,2,4,56,78,43,56,33,24,44};
-    int max = 0;
+//  Point byValue(Point p){
+//         p.x *= 2;
+//         return p;
+//     }
 
-    for (int i = 0; i <20; i++)
-    {
-        /* code */
-        if(arr[max]<arr[i]){
-            max = i;
-       }
-    }
+//     Point byAddress(Point *p){
+//         p->y *= 2;
+//         return *p;
+//     }
+
+// int main(){
+
+//     Point a = {5, 5};
+//     Point b = byValue(a);
+//     cout << "By value: a.x=" << a.x << " b.x=" << b.x << endl;
+//     Point c = byAddress(&a);
+//     cout << "By address: a.x=" << a.x << " c.x=" << c.x << endl;
+
+// }
+
+// Q2
+
+// class Rect{
+//     public:
+//         int l, b;
+//         int area(){
+//             return l*b;
+//         };
+
+
+// };
+
+// int main(){
+
+
+//     Rect r1[2]={{1,2},{3,4}};
+//     for (int i = 0; i < 2; i++)
+//     {
+//         /* code */
+//         cout << "Area " << i+1 << " = " << r1[i].area() << endl;
+
+//     }
     
-    cout<<"Index of Max:"<<max<<endl;
-    cout<<"Max value:"<<arr[max];
 
-}
+// }
 
+// Q 3
+
+// class S{
+//     public:
+//         int sum(int x, int y);
+// };
+
+// int S::sum(int x , int y){
+//     return x+y;
+// }
+
+// int main(){
+//     S s1;
+
+//     cout<< s1.sum(3,4);
+
+// }
+
+// Q 4
+
+// int x = 20;
+
+// int main(){
+
+//     int x = 10;
+
+//     cout << ::x;
+
+// }
+
+// Q 5
+
+
+// class A { 
+//     public: 
+//     static int x; };
+
+// int A::x = 5;
+
+// int main()
+// { 
+//     cout << A::x << endl;
+//  }
+
+// Q 6
+
+// #include <stdio.h>
+// #include <iostream>
+
+// Q7
+
+// class Cube {
+//     public:
+//        int num;
+
+//     int cu(int num){
+//         return num * num * num;
+//     }
+// };
+
+// int main(){
+//     Cube c1;
+
+//     cout<< c1.cu(5);
+
+// }
+
+// Q 8
+
+// #include <iostream>
+// using namespace std;
+// int x = 1;
+// class A {
+// public:
+//     static int x;
+//     void show() {
+//         int x = 3;
+//         cout << x << " " << ::x << " " << A::x << endl;
+//     }
+// };
+// int A::x = 2;
+// int main() { A a; a.show(); }
+
+// Q 9
+
+// class A{
+
+//     public:
+//         static int x;
+//     A(){
+//         x++;
+//     };
+
+//     static int get(){
+//         return x;
+//     }
+
+// };
+
+// int A::x = 0;
+
+// int main(){
+
+//     A s1;
+
+//     cout << s1.x;
+
+
+// }
+
+// Q 10 
+
+// class cn{
+
+//     int x = 10;
+
+//     public:
+//         int show() const {
+//             cout << x;
+//             // int x = 50;
+//         }
+
+// };
+
+// int main(){
+
+//     cn c1;
+
+//     c1.show();
+
+// }
+
+// int main(){
+
+//     bool answer;
+
+//     cout<<"Ruhani Bhateja would you like to be"
+
+// }
