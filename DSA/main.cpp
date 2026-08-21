@@ -196,39 +196,206 @@
 
 // Encapsulation/Inheritance/polymorphism/abstraction..
 
+// #include <iostream>
+// using namespace std;
+
+// class Person{
+//     public:
+//         string name;
+//         int age;
+
+//         // Person(string name,int age){
+//         //     this->name = name;
+//         //     this->age = age;
+//         // }
+
+//         Person(){
+//             cout<< "Parent constructor.\n";
+//         }
+// };
+
+// class Student : public Person{
+
+//     public:
+//         int rollNo;
+
+//         Student(string name,int age, int rollNo) : Person( name,  age){
+//             this->name=name;
+//             this->age=age;
+//             this->rollNo = rollNo;
+//         }
+
+//         void getInfo(){
+//             cout << "Name:"<< name <<endl;
+//             cout << "Age:"<<age<<endl;
+//             cout<< "Roll No:"<<rollNo<<endl;
+//         }
+
+//         // Student(){
+//         //     cout << "Child Constructor";
+//         // }
+// };
+
+// int main(){
+
+//     Student s1();
+
+//     s1.getInfo();
+//     return 0;
+
+// }
+    
+
+// #include <iostream>
+// #include <string>
+// using namespace std;
+
+// class Person{
+//     public:
+//         string name;
+//         int age;
+// };
+
+// class Student : public Person{
+//     public:
+//         int rollNo;
+// };
+
+// class GradStudent : public Student{
+//     public:
+//         string reasearchArea;
+// };
+
+// int main(){
+
+//     GradStudent g1;
+//     g1.name = "Rahul";
+
+//     cout<< g1.name<<endl;
+
+// }
+
+// #include <iostream>
+// using namespace std;
+// #include <string>
+
+// class Person{
+
+//     public:
+//         int age;
+
+// };
+
+// class Student : public Person{
+//     public:
+//         string name;
+//         int rollNo;
+
+// };
+
+// class Teacher : public Person{
+
+//     public:
+//         string subject;
+
+// };
+
+// class TA : public Student , public Teacher{
+//     public:
+//        string researchArea;
+// };
+
+// int main(){
+
+//     TA t1;
+
+//     t1.name = "Tony stark";
+//     t1.subject = "mark";
+
+//     cout << t1.name<<endl;
+//     cout << t1.subject<<endl;
+
+// }
+
+// #include <iostream>
+// using namespace std;
+// #include <string>
+
+// class Print{
+//     public:
+//         void show(int x){
+//             cout<< "Int x:"<<x<<endl;
+//         }
+
+//         void show(char x){
+//             cout<< "Char x:"<< x<<endl;
+//         }
+// };
+
+// int main(){
+
+//     Print p1;
+
+//     p1.show(1);
+//     p1.show('#');
+
+// }
+
+// #include <iostream>
+// using namespace std;
+// #include <string>
+
+// class Parent{
+
+//     public:
+//         void getInfo(){
+//             cout<< "parent class\n";
+//         }
+
+//         virtual void hello(){
+//             cout<< "Hello";
+//         }
+// };
+
+// class Child : public Parent{
+
+//     public:
+//         void getInfo(){
+//             cout<<"Child class\n";
+//         }
+
+
+// };
+
+// int main(){
+
+//     Parent p1;
+//     Child c1;
+
+//     p1.getInfo();
+//     c1.getInfo();
+//     c1.hello();
+
+// }
+
 #include <iostream>
 using namespace std;
+#include <string>
 
-class Person{
-    public:
-        string name;
-        int age;
+void func(){
 
-        // Person(string name,int age){
-        //     this->name = name;
-        //     this->age = age;
-        // }
-};
-
-class Student : public Person{
-
-    public:
-        int rollNo;
-
-        void getInfo(){
-            cout << "Name:"<< name <<endl;
-            cout << "Age:"<<age<<endl;
-            cout<< "Roll No:"<<rollNo<<endl;
-        }
-};
+    static int x = 0;
+    cout<<"x:"<<x <<endl;
+    x++;
+}
 
 int main(){
 
-    Student s1;
-    s1.name = "rahul";
+    func();
+    func();
+    func();
+    func();
 
     return 0;
-    
-}
-    
 
+}
