@@ -378,24 +378,24 @@
 
 // }
 
-#include <iostream>
-using namespace std;
-#include <string>
+// #include <iostream>
+// using namespace std;
+// #include <string>
 
-void func(){
+// void func(){
 
-    static int x = 0;
-    cout<<"x:"<<x <<endl;
-    x++;
-}
+//     static int x = 0;
+//     cout<<"x:"<<x <<endl;
+//     x++;
+// }
 
-int main(){
+// int main(){
 
-    func();
-    func();
-    func();
-    func();
+//     func();
+//     func();
+//     func();
+//     func();
 
-    return 0;
+//     return 0;
 
-}
+// }
