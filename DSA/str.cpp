@@ -26,6 +26,36 @@
 
 #include <iostream>
 using namespace std;
-#include <string>
+#include <vector>
 
-// hi
+
+int main() { 
+  // write your code here
+  long long int n;
+  std::cin >> n;
+  
+  long long int x;
+  std::cin >> x;
+
+    std::vector<long long int> v(n);
+    for (int i = 0; i < n; i++) {
+        /* code */
+        std::cin >> v[i];
+    }
+    
+    
+    
+    for (int i = 0; i < n; i++) {
+        /* code */
+        if(v[i]== x){
+            v[i] = v[i] + 1;
+        }
+    }
+    
+    for (int i = 0; i < n; i++) {
+        /* code */
+        cout << v[i];
+    }
+    
+  return 0;
+}
