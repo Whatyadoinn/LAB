@@ -24,38 +24,63 @@
 //     return 0;
 // }
 
+// #include <iostream>
+// using namespace std;
+// #include <vector>
+
+
+// int main() { 
+//   // write your code here
+//   long long int n;
+//   std::cin >> n;
+  
+//   long long int x;
+//   std::cin >> x;
+
+//     std::vector<long long int> v(n);
+//     for (int i = 0; i < n; i++) {
+//         /* code */
+//         std::cin >> v[i];
+//     }
+    
+    
+    
+//     for (int i = 0; i < n; i++) {
+//         /* code */
+//         if(v[i]== x){
+//             v[i] = v[i] + 1;
+//         }
+//     }
+    
+//     for (int i = 0; i < n; i++) {
+//         /* code */
+//         cout << v[i];
+//     }
+    
+//   return 0;
+// }
+
 #include <iostream>
 using namespace std;
-#include <vector>
+#include <string>
 
+class Student{
 
-int main() { 
-  // write your code here
-  long long int n;
-  std::cin >> n;
-  
-  long long int x;
-  std::cin >> x;
+    public:
+        int x;
+        int n;
+        
 
-    std::vector<long long int> v(n);
-    for (int i = 0; i < n; i++) {
-        /* code */
-        std::cin >> v[i];
-    }
-    
-    
-    
-    for (int i = 0; i < n; i++) {
-        /* code */
-        if(v[i]== x){
-            v[i] = v[i] + 1;
-        }
-    }
-    
-    for (int i = 0; i < n; i++) {
-        /* code */
-        cout << v[i];
-    }
-    
-  return 0;
+        int sum(int n,int x){
+            cout << n+x;
+        };
+
+};
+
+int main(){
+
+    Student s1;
+
+    s1.sum(1,2);
+
 }
