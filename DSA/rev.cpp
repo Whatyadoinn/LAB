@@ -144,40 +144,62 @@
 //     make_sound(c1);   // prints Meow!
 // }
 
+// #include <iostream>
+// using namespace std;
+
+// class Shape{
+//     public:
+//         virtual void area() = 0;
+
+// };
+
+// class Circle : public Shape{
+
+//     public:
+//         void area() override {
+//             float r = 5;
+//             cout << "Area of circle:" << 3.14 * r * r << endl;
+//         }
+
+// };
+
+// class Rectangle : public Shape{
+//     public:
+//         void area() override {
+//             float length = 10;
+//             float width = 5;
+//             cout<< "Area of rectangle:"<< length * width << endl;
+//         }
+// };
+
+// int main(){
+
+//     Circle c1;
+//     Rectangle r1;
+
+//     c1.area();
+//     r1.area();
+
+// }
+
 #include <iostream>
 using namespace std;
 
-class Shape{
+class Student{
     public:
-        virtual void area() = 0;
+        string name;
+        int age;
 
-};
+        Student(string name, int age) : name(name), age(age) {}
 
-class Circle : public Shape{
-
-    public:
-        void area() override {
-            float r = 5;
-            cout << "Area of circle:" << 3.14 * r * r << endl;
-        }
-
-};
-
-class Rectangle : public Shape{
-    public:
-        void area() override {
-            float length = 10;
-            float width = 5;
-            cout<< "Area of rectangle:"<< length * width << endl;
+        void from_string(string name, int age) {
+            cout << name;
+            cout << age;
         }
 };
 
 int main(){
+    Student s1("Raghav", 17);
 
-    Circle c1;
-    Rectangle r1;
-
-    c1.area();
-    r1.area();
-
+    s1.from_string("Raghav", 17);
 }
