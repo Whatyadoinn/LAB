@@ -139,7 +139,7 @@ public:
     }
 
     // --------------------------------------------------------
-    // FRIEND FUNCTION DECLARATION
+    // FRIEND FUNCTION DECLARATION(Baisically father who can get info from their children)
     // Grants access to private members of Car
     // --------------------------------------------------------
     friend void showCarBrand(Car &c);
