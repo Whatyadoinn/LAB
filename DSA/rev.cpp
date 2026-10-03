@@ -474,31 +474,457 @@
     
 // }
 
+// #include <iostream>
+// using namespace std;
+
+// namespace Collage{
+//     int rollNo = 101;
+//     string dept = "CS Department";
+
+//     void display(){
+//         cout<< rollNo << dept << endl;
+//     }
+// }
+
+// struct Cstyle{
+//     int x;
+//     int y;
+// };
+
+// class Engine;
+
+// class Car{
+//     private:
+//         string brand;
+//         int speed;
+//         const int id;
+
+//         static int objectCount;
+// };
+
+// #include <iostream>
+// using namespace std;
+
+// class myclass{
+//     int a,b;
+//     public:
+//         myclass(int i, int j){
+//             a= i;
+//             b= j;
+//         }
+
+//         void show(){
+//             cout<< a << " " << b;
+//         }
+// };
+
+// int main(){
+
+//     myclass x1(2,3);
+
+//     x1.show();
+
+// }
+
+// class test{
+//     int *ptr;
+//         public:
+//             test();
+//             test(int);
+//             void display();
+// };
+
+// test::test(){
+//     ptr = new int;
+//     *ptr = 100;
+// }
+
+// test::test(int t){
+//     ptr = new int;
+//     *ptr = t;
+// }
+
+// void test::display(){
+//     cout<< *ptr <<endl;
+// }
+
+// int main(){
+//     test obj;
+//     test obj1(40);
+//     obj.display();
+//     obj1.display();
+    
+// }
+
+// class example{
+
+//     char *name;
+//     int length;
+
+//     public:
+//         example();
+//         example(char *);
+//         void display();
+// };
+
+// example::example(){
+//     length = 0;
+//     name = new char[length+1];
+// }
+
+// example::example(char *e){
+//     length = strlen(e);
+//     name = new char[length +1];
+//     strcpy(name,e);
+// }
+
+// void example::display(){
+//  cout<<name<<endl;
+// }
+
+// int main(){
+//  char *a= "Welcome to";
+//  example e1(a), e2("C++"), e3("World");
+//  e1.display();
+//  e2.display();
+//  e3.display();
+//  return 0;
+// }
+
+// class abc{
+//     int a;
+//         public:
+//             abc(int);
+//             void display();
+//             ~abc();        
+// };
+
+// abc::abc(int x){
+//     a= x;
+// }
+
+// void abc::display(){
+//     cout<<"a=" <<a;
+// }
+
+// abc::~abc(){
+//     cout<<"Object is destroyed";
+// }
+
+// int main(){
+
+//     abc obj1(10);
+//     obj1.display();
+//     return 0;
+
+// }
+
+// #include <iostream>
+// using namespace std;
+
+// class Shape {
+// protected:
+// int width;
+// int height;
+// public:
+// void setWidth(int w) {
+// width = w; }
+// void setHeight(int h) {
+// height = h; } } ;
+
+// class Rectangle: public Shape {
+// public:
+// int getArea() {
+// return (width * height); } };
+
+// int main() {
+// Rectangle Rect;
+// Rect.setWidth(5);
+// Rect.setHeight(7);
+// cout << "Total area: " << Rect.getArea() << endl; // Print the area of the object.
+// return 0;
+// }
+
+// #include <iostream>
+// using namespace std;
+
+// // Base class Shape
+// class Shape {
+//     public:
+//     void setWidth(int w) {
+//     width = w; }
+//     void setHeight(int h) {
+//     height = h; }
+//     protected:
+//     int width;
+//     int height;
+// };
+
+// // Base class PaintCost
+// class PaintCost {
+//     public:
+//     int getCost(int area) {
+//     return area * 70; }};
+// // Derived class
+
+// class Rectangle: public Shape, public PaintCost {
+//     public:
+//     int getArea() {
+//     return (width * height);
+//     } };
+//     int main(void) {
+//     Rectangle Rect;
+//     int area;
+//     Rect.setWidth(5);
+//     Rect.setHeight(7);
+//     area = Rect.getArea();
+//     // Print the total cost of painting
+//     cout << "Total paint cost: $" << Rect.getCost(area)
+//     << endl;
+// return 0; }
+
+// #include <iostream>
+// #include <string>
+// using namespace std;
+
+// class member{
+//     char gender[10];
+//     int age;
+
+//     public:
+//         void get(){
+//             cout<<"Age:" ; cin>> age;
+//             cout<<'Gender:' ; cin>> gender;
+//         }
+
+//         void disp() {
+//         cout << "Age: " << age << endl; cout
+//         << "Gender: " << gender << endl; }
+        
+// };
+
+// class stud:public member{
+//     char level[20];
+//     public:
+//         void getData(){
+//             member:get();
+//             cout<< "Class:";
+//             cin>> level;
+//         }
+
+//         void disp2(){
+//             member:disp();
+//             cout<< "Level:" << level;
+//         }
+// };
+
+// class staff:public member{
+//     float salary;
+//     public:
+//         void getData(){
+//             member:get();
+//             cout<<"Salary:";
+//             cin>>salary;
+//         }
+
+//         void disp3(){
+//             member:disp();
+//             cout<< salary;
+//         }
+// };
+
+// int main() {
+// //member M;
+// staff S;
+// stud s;
+// s.getData();
+// s.disp();
+// S.getData();
+// S.disp();
+// return(0); }
+
+// #include <iostream>
+// #include <string>
+// using namespace std;
+
+// class Company
+// {
+// protected:
+//     string company_name;
+//     string location;
+
+// public:
+
+//     Company(string cname, string loc)
+//     {
+//         company_name = cname;
+//         location = loc;
+//     }
+
+//     void displayCompany()
+//     {
+//         cout << "Company Name: " << company_name << endl;
+//         cout << "Location: " << location << endl;
+//     }
+// };
+
+// class Team : public Company
+// {
+// protected:
+//     string team_name;
+//     string project;
+
+// public:
+
+//     Team(string cname, string loc,
+//          string tname, string proj)
+//         : Company(cname, loc)
+//     {
+//         team_name = tname;
+//         project = proj;
+//     }
+
+//     void displayTeam()
+//     {
+//         cout << "Team Name: " << team_name << endl;
+//         cout << "Project: " << project << endl;
+//     }
+// };
+
+// class Developer : public Team
+// {
+// private:
+//     string developer_name;
+//     string programming_language;
+
+// public:
+
+//     Developer(string cname, string loc,
+//               string tname, string proj,
+//               string dname, string lang)
+//         : Team(cname, loc, tname, proj)
+//     {
+//         developer_name = dname;
+//         programming_language = lang;
+//     }
+
+//     void displayDeveloper()
+//     {
+//         cout << "Developer Name: "
+//              << developer_name << endl;
+
+//         cout << "Programming Language: "
+//              << programming_language << endl;
+//     }
+// };
+
+// int main()
+// {
+//     Developer d(
+//         "Microsoft",
+//         "Bangalore",
+//         "Software Team",
+//         "AI Project",
+//         "Rahul",
+//         "C++"
+//     );
+
+//     cout << "--- Company Details ---" << endl;
+//     d.displayCompany();
+
+//     cout << "\n--- Team Details ---" << endl;
+//     d.displayTeam();
+
+//     cout << "\n--- Developer Details ---" << endl;
+//     d.displayDeveloper();
+
+//     return 0;
+// }
+
+// #include <iostream>
+// using namespace std;
+
+// class Student{
+//     string name;
+//     int age;
+//     public: 
+//     Student(){
+//         name = "Unknown";
+//         age = 0;
+//     }
+
+//     Student(string n,int a){
+//         name = n;
+//         age = a;
+//     }
+
+//     void display(){
+//         cout<< "Name:"<<name<<endl;
+//         cout<<"Age:" <<age<<endl;
+//     }
+
+//     ~Student(){
+//         cout<< "Destroyed"<<name<<endl;
+//     }
+// };
+
+// int main()
+// {
+//     Student obj1;              // Default constructor
+//     Student obj2("John", 20);  // Parameterized constructor
+
+//     obj1.display();
+//     obj2.display();
+
+//     return 0;
+// }
+
+// #include <iostream>
+// using namespace std;
+
+// class Triangle;
+
+// class Rectangle{
+
+//     private:
+//         int length;
+//         int breadth;
+//         string color;
+
+//         public:
+//             void setdata(){
+//                 cout<<"Enter length:";
+//                 cin>> length;
+
+//                 cout << "Enter breadth: ";
+//                 cin >> breadth;
+
+//                 cout << "Enter color: ";
+//                 cin >> color;
+//             }
+
+//             friend void addArea(Rectangle,Triangle);
+
+// };
+
 #include <iostream>
 using namespace std;
 
-namespace Collage{
-    int rollNo = 101;
-    string dept = "CS Department";
+class Student {
+static int count;
+public:
+Student() {
+count++;
+  }
+static int getCount() {
+return count;
+  }
+};
 
-    void display(){
-        cout<< rollNo << dept << endl;
-    }
+int Student::count = 0;
+
+int main() {
+    Student s1, s2, s3;
+    cout << "Total objects: " << Student::getCount();
+    return 0;
 }
-
-struct Cstyle{
-    int x;
-    int y;
-};
-
-class Engine;
-
-class Car{
-    private:
-        string brand;
-        int speed;
-        const int id;
-
-        static int objectCount;
-};
-
