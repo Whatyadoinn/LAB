@@ -433,3 +433,37 @@
     
 // }
 
+#include <iostream>
+using namespace std;
+
+// void explainPair(){
+//     pair<int,int> p = {1,2};
+//     cout<< p.first << " " << p.second<< endl;
+// }
+
+void explainVector(){
+    vector<int> v;
+
+    v.push_back(1);
+    v.emplace_back();
+
+    vector<pair<int,int>> vec;
+    
+    vec.push_back({1,2});
+    vec.emplace_back(1,2);
+
+    vector<int> x(5);
+
+    vector<int> v1(5,100);
+
+    // for(int i = 0;i< v1.size();i++){
+    //     cout<< v1[i];
+    // }
+    
+    
+}
+
+int main(){
+    // explainPair();
+    // explainVector();
+}
