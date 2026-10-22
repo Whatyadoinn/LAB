@@ -98,13 +98,42 @@
 
 // }
 
+// #include <iostream>
+// using namespace std;
+
+// void conc(){
+//     string s1 = "Hello";
+//     string s2 = "World";
+    
+//     string x = s1 + s2;
+
+//     cout<< x;
+
+// }
+
+// int main(){
+
+// conc();
+
+// }
+
+// Function overloading
+
 #include <iostream>
 using namespace std;
 
-void conc(){
-    string s1 = "Hello";
-    string s2 = "World";
-    int i = 0;
-    
+int myFunc(int i){
+    return i;
+};
+
+double myFunc(double i){
+    return i;
+};
+
+
+int main(){
+
+    cout<< myFunc(1.2)<<endl;
+    cout<< myFunc(5)<<endl;
 
 }

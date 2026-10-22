@@ -470,3 +470,32 @@
 //     // explainVector();
 // }
 
+//Function overloading with different parameters combination.
+// #include <iostream>
+// using namespace std;
+
+// void display(int x) {
+//     cout << "Integer: " << x << endl;
+// }
+
+// void display(float x) {
+//     cout << "Float: " << x << endl;
+// }
+
+// void display(int x, float y) {
+//     cout << "Integer: " << x
+//          << " and float: " << y << endl;
+// }
+
+// int main() {
+//     int a = 5;
+//     float b = 5.5f;
+
+//     display(a);
+//     display(b);
+//     display(a, b);
+
+//     return 0;
+// }
+
+
