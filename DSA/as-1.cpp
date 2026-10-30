@@ -499,3 +499,296 @@
 // }
 
 
+// Function overloading within a class
+// #include <iostream>
+// using namespace std;
+
+// class PrintData{
+//     public:
+//         void print(int x) {
+//         cout << "Printing int: " << x << endl;
+//     }
+
+//     void print(double x) {
+//         cout << "Printing double: " << x << endl;
+//     }
+
+//     void print(const char* x) {
+//         cout << "Printing text: " << x << endl;
+//     }
+
+// };
+
+// int main(){
+
+//     PrintData pd;
+
+//     pd.print(4);
+//     pd.print(2.3);
+//     pd.print("Hello");
+
+// }
+
+
+// #include <iostream>
+// using namespace std;
+
+// void greet(string name = "Student") {
+//     cout << "Hello, " << name << endl;
+// }
+
+// int main() {
+//     greet();
+//     greet("Aman");
+// }
+
+
+// Name hiding 
+
+
+// #include <iostream>
+// using namespace std;
+
+// class Base {
+// public:
+//     void showData(int x) {
+//         cout << "Base: " << x << endl;
+//     }
+// };
+
+// class Derived : public Base {
+// public:
+//     void showData() {
+//         cout << "Derived function" << endl;
+//     }
+// };
+
+// int main() {
+//     Derived d;
+
+//     d.showData();
+
+//     // d.showData(5); // Error: hidden base overload
+//     d.Base::showData(5);
+
+//     return 0;
+// }
+
+
+
+// #include <iostream>
+// using namespace std;
+
+// class Shape{
+
+//     public:
+//         virtual void Draw(){
+//             cout<<"I am a shape"<<endl;
+//         }
+
+//         virtual ~Shape() = default;
+
+// };
+
+// class Square:public Shape{
+
+//     public:
+//         void Draw() override {
+//             cout<<"I am a Square"<<endl;
+//         }
+
+// };
+
+// class Circle:public Shape{
+
+//     public:
+//         void Draw() override {
+//             cout<<"I am a Circle"<<endl;
+//         }
+
+// };
+
+// int main(){
+//     Shape *s;
+
+//     Shape s1;
+//     s = &s1;
+//     s->Draw();
+
+//     Square s2;
+//     s = &s2;
+//     s->Draw();
+
+//     Circle s3;
+//     s = &s3;
+//     s->Draw();
+
+// }
+
+
+// #include <iostream>
+// using namespace std;
+
+// class Animal {
+// public:
+//     virtual void sound() = 0;
+
+//     void sleeping() {
+//         cout << "Sleeping" << endl;
+//     }
+
+//     virtual ~Animal() = default;
+// };
+
+// class Dog : public Animal {
+// public:
+//     void sound() override {
+//         cout << "Woof" << endl;
+//     }
+// };
+
+// int main() {
+//     Dog obj;
+//     obj.sound();
+//     obj.sleeping();
+
+//     Animal *ptr = new Dog;
+//     ptr->sound();
+
+//     delete ptr;
+// }
+
+// Operator Overloading
+// #include <iostream>
+// using namespace std;
+
+// class Distance{
+//     private:
+//         int feet;
+//         int inches;
+
+//         public:
+//             Distance():feet(0),inches(0){};
+//             Distance(int f,int i):feet(f),inches(i){};
+
+//             void displayDistance(){
+//                 cout<< "Feet:" << feet << endl;
+//                 cout<< "Inches:" << inches << endl;
+//             }
+
+//             Distance operator- (){
+//                 feet=-feet;
+//                 inches=-inches;
+
+//                 return Distance(feet,inches);
+//             }
+
+// };
+
+// int main(){
+//     Distance D1(11,10), D2(-10,56);
+//     cout<< "Before Overloading"<<endl;
+//     D2.displayDistance();
+//     -D2;
+//     cout<< "After Overloading"<<endl;
+//     D2.displayDistance();
+// }
+
+
+// #include <iostream>
+// using namespace std;
+
+// class Complex {
+// public:
+//     int real, img;
+
+//     Complex(int r = 0, int i = 0)
+//         : real(r), img(i) {}
+
+//     Complex operator+(const Complex& c) const {
+//         return Complex(real + c.real,
+//                        img + c.img);
+//     }
+
+//     void showData() const {
+//         cout << real << " + "
+//              << img << "i" << endl;
+//     }
+// };
+
+// int main() {
+//     Complex c1(1, 1);
+//     Complex c2(2, 2);
+
+//     Complex c3 = c1 + c2;
+//     c3.showData();
+
+//     return 0;
+// }
+
+
+// #include <iostream>
+// using namespace std;
+
+// class Complex{
+
+//     private:
+//         int real;
+//         int img;
+
+//             public:
+//                 Complex():real(0),img(0){};
+//                 Complex(int r,int i):real(r),img(i){};
+
+//                 void showData(){
+
+//                     cout<<"Number:" << real << "+("<<img<<")i"<<endl;
+
+//                 }
+
+//                 friend Complex operator+(Complex,Complex);
+// };
+
+// Complex operator+(Complex c1,Complex c2){
+//     Complex x;
+//     x.img = c1.img + c2.img;
+//     x.real = c1.real + c2.real;
+
+//     return x;
+// }
+
+// int main(){
+
+//     Complex c1(4,6),c2(5,9);
+//     c1.showData();
+//     c2.showData();
+//     Complex c3;
+//     c3 = c1+c2;
+
+//     cout<< "Addition:";
+//     c3.showData();
+//     return 0;
+
+// }
+
+
+#include <iostream>
+using namespace std;
+
+class loc{
+
+    private:
+        int lat;
+        int longi;
+
+        public:
+            loc():lat(0),longi(0){}
+            loc(int la,int lo):lat(la),longi(lo){}
+
+            void showData(){
+                cout<<"Latitude:"<<lat << "\n" << "Longitude:" << longi<<endl;
+            }
+
+            void *operator new(size_t size);
+
+};

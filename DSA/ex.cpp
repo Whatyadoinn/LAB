@@ -1,32 +1,104 @@
 #include <iostream>
 using namespace std;
 
-class Date{
-    private:
-        int month;
-        int day;
-        int year;
-        static char stash;
+class Node{
+    public:
+      int data;
+      Node * next;
 
+      Node(int val){
+        data = val;
+        next = NULL;
+      }
+};
 
-        public:
-          void setDate(int day,int month,int year){
-            this->day = day;
-            this->month = month;
-            this->year = year;
-          }
+class List{
+    Node* head;
+    Node* tail;
 
-          void showDate(){
-            cout<< day << "/"<<month<<"/"<<year;
-          }
+    public:
+      List(){
+        head = tail = NULL;
+      }
+
+      void push_front(int val){
+        Node* newNode = new Node(val);
+        if(head == NULL){
+          head = tail = newNode;
+          return;
+        }
+        else{
+          newNode->next = head;
+          head = newNode;
+        }
+      }
+
+      void push_back(int val){
+        Node* newNode = new Node(val);
+
+        if(head == NULL){
+          head = tail = newNode;
+        }
+        else{
+          tail->next = newNode;
+        }
+      }
+
+      void pop_front(){
+        if(head == NULL){
+          cout<< "Empty"<<endl;
+        }
+
+        Node* temp = head;
+        head = head->next;
+        temp->next = NULL;
+
+        delete temp;
+      }
+
+      void pop_back(){
+        if(head == NULL){
+          cout<< "Empty"<<endl;
+        }
+
+        Node * temp = head;
+        while (temp->next != tail)
+        {
+          /* code */
+          temp = temp->next;
+        }
+
+        temp->next = NULL;
+
+        delete temp;
+        tail = temp;
+        
+      }
+
+      void printLL(){
+        Node * temp = head;
+
+        while(temp != NULL){
+          cout<< temp->data << " ";
+          temp = temp->next;
+        }
+        cout<<endl;
+      }
 };
 
 int main(){
+  List ll;
 
-    Date d1;
+  ll.push_front(1);
+  ll.push_front(2);
+  ll.push_front(3);
 
-    d1.setDate(12,12,2006);
+  ll.push_back(4);
 
-    d1.showDate();
+  ll.pop_front();
+  ll.pop_back();
 
+  ll.printLL();
+
+  return 0;
 }
